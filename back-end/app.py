@@ -13,8 +13,8 @@ from reportlab.lib.enums import TA_LEFT
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILES_DIR = os.path.join(BASE_DIR, 'data-files')
 
-# Set up OpenAI API key
-openai.api_key = 'enter-api-key'
+# Set up OpenAI API key from environment (do not hardcode secrets)
+openai.api_key = os.getenv('OPENAI_API_KEY', '')
 client = openai.OpenAI(api_key=openai.api_key)
 
 app = FastAPI()
