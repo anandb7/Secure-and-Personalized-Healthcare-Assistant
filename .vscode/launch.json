@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run FastAPI Backend",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/back-end/app.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}/",
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        }
+      },
+      {
+        "name": "Run React Frontend",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/front-end/node_modules/react-scripts/bin/react-scripts.js",
+        "args": [
+          "start"
+        ],
+        "cwd": "${workspaceFolder}/front-end",
+        "sourceMaps": true,
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Full Stack",
+        "configurations": ["Run FastAPI Backend", "Run React Frontend"]
+      }
+    ]
+  }
+  
